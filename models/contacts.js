@@ -60,5 +60,4 @@ const updateContact = async (id, { name, email, phone }) => {
   return contacts[index];
 };
 
-// prettier-ignore
 export { listContacts, getContactById, removeContact, addContact, updateContact };

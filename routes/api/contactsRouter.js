@@ -33,7 +33,7 @@ router.post("/", async (req, res, next) => {
   try {
     const { error } = contactValidation.validate(req.body);
     if (error) {
-      throw httpError(400, error.details[0].message);
+      throw httpError(400, "missing required name field");
     }
 
     const result = await addContact(req.body);
@@ -64,7 +64,7 @@ router.put("/:contactId", async (req, res, next) => {
   try {
     const { error } = contactValidation.validate(req.body);
     if (error) {
-      throw httpError(400, error.details[0].message);
+      throw httpError(400, "missing fields");
     }
 
     const { contactId } = req.params;
